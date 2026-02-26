@@ -12,7 +12,7 @@ public class AlbumView {
     public static void printAlbums() {
         GetAlbumsUseCase getAlbumsUseCase = new GetAlbumsUseCase(
                 new AlbumDataRepository(
-                        new AlbumMemLocalDataSource()));
+                        AlbumMemLocalDataSource.newInstance()));
 
         ArrayList<Album> albums = getAlbumsUseCase.execute();
         System.out.println(albums);

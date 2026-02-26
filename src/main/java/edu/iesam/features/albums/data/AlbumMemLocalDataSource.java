@@ -1,10 +1,13 @@
 package edu.iesam.features.albums.data;
 
 import edu.iesam.features.albums.domain.Album;
+import edu.iesam.features.songs.data.SongMemLocalDataSource;
 
 import java.util.ArrayList;
 
 public class AlbumMemLocalDataSource {
+
+    private static AlbumMemLocalDataSource instance = null;
 
     private ArrayList<Album> albumsMemStorage = new ArrayList<>();
 
@@ -22,6 +25,14 @@ public class AlbumMemLocalDataSource {
 
     public ArrayList<Album> findAll() {
         return albumsMemStorage;
+    }
+
+    public static AlbumMemLocalDataSource newInstance(){
+        if (instance == null){
+            instance = new AlbumMemLocalDataSource();
+        }
+
+        return instance;
     }
 
 }
