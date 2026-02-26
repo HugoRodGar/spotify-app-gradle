@@ -24,7 +24,7 @@ public class AuthorView {
 
         SaveAuthorsUseCase saveAuthorsUseCase = new SaveAuthorsUseCase(
                 new AuthorDataRepository(
-                        new AuthorMemLocalDataSource()));
+                        AuthorMemLocalDataSource.newInstance()));
 
         saveAuthorsUseCase.execute(newAuthor);
     }
