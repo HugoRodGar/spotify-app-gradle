@@ -1,5 +1,6 @@
 package edu.iesam.features.songs.data;
 
+import edu.iesam.features.authors.domain.Author;
 import edu.iesam.features.songs.domain.Song;
 
 import java.util.ArrayList;
@@ -24,6 +25,10 @@ public class SongMemLocalDataSource {
 
     public ArrayList<Song> findAll() {
         return songsMemStorage;
+    }
+
+    public void save(Song song) {
+        songsMemStorage.add(song);
     }
 
     public static SongMemLocalDataSource newInstance(){
