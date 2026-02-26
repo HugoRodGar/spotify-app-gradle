@@ -18,4 +18,14 @@ public class SongView {
         System.out.println(songs);
     }
 
+    public static void saveSongs() {
+        Song newSong = new Song("2", "name2", "PepePlus", "2:24");
+
+        SaveSongsUseCase saveSongsUseCase = new SaveSongsUseCase(
+                new SongDataRepository(
+                        new SongMemLocalDataSource()));
+
+        saveSongsUseCase.execute(newSong);
+    }
+
 }
