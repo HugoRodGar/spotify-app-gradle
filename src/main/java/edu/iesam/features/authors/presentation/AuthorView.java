@@ -13,7 +13,7 @@ public class AuthorView {
     public static void printAuthors() {
         GetAuthorsUseCase getAuthorsUseCase = new GetAuthorsUseCase(
                 new AuthorDataRepository(
-                        new AuthorMemLocalDataSource()));
+                        AuthorMemLocalDataSource.newInstance()));
 
         ArrayList<Author> authors = getAuthorsUseCase.execute();
         System.out.println(authors);
