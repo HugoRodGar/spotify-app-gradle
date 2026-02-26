@@ -18,4 +18,9 @@ public class AlbumDataRepository implements AlbumRepository {
         return albumMemLocalDataSource.findAll();
     }
 
+    @Override
+    public void saveAlbum(Album album) {
+        albumMemLocalDataSource.save(album);
+    }
+
 }
